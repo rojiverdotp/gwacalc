@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<title>valed why</title>
+
+		<style>
+			body {
+				text-align: center;
+				margin-top: 100px;
+			}
+		</style>
+
+	</head>
+
+	<body>
+
+		<h1>gwa calculator w/ valed</h1>
+		<form>
+			<label for="1">bio</label>
+			<input id="1" type="text" value="1.00" size="1" disabled></input>
+			<input type="button" onclick="subtract('1')" value="<"></input>
+			<input type="button" onclick="add('1')" value=">"></input><br>
+			<label for="2">chem</label>
+			<input id="2" type="text" value="1.00" size="1" disabled></input>
+			<input type="button" onclick="subtract('2')" value="<"></input>
+			<input type="button" onclick="add('2')" value=">"></input><br>
+			<label for="3">phys</label>
+			<input id="3" type="text" value="1.00" size="1" disabled></input>
+			<input type="button" onclick="subtract('3')" value="<"></input>
+			<input type="button" onclick="add('3')" value=">"></input><br>
+			<label for="4">res</label>
+			<input id="4" type="text" value="1.00" size="1" disabled></input>
+			<input type="button" onclick="subtract('4')" value="<"></input>
+			<input type="button" onclick="add('4')" value=">"></input><br>
+			<label for="5">comsci</label>
+			<input id="5" type="text" value="1.00" size="1" disabled></input>
+			<input type="button" onclick="subtract('5')" value="<"></input>
+			<input type="button" onclick="add('5')" value=">"></input><br>
+			<label for="6">math</label>
+			<input id="6" type="text" value="1.00" size="1" disabled></input>
+			<input type="button" onclick="subtract('6')" value="<"></input>
+			<input type="button" onclick="add('6')" value=">"></input><br>
+			<label for="7">eng</label>
+			<input id="7" type="text" value="1.00" size="1" disabled></input>
+			<input type="button" onclick="subtract('7')" value="<"></input>
+			<input type="button" onclick="add('7')" value=">"></input><br>
+			<label for="8">fil</label>
+			<input id="8" type="text" value="1.00" size="1" disabled></input>
+			<input type="button" onclick="subtract('8')" value="<"></input>
+			<input type="button" onclick="add('8')" value=">"></input><br>
+			<label for="9">socsci</label>
+			<input id="9" type="text" value="1.00" size="1" disabled></input>
+			<input type="button" onclick="subtract('9')" value="<"></input>
+			<input type="button" onclick="add('9')" value=">"></input><br>
+			<label for="10">pehm</label>
+			<input id="10" type="text" value="1.00" size="1" disabled></input>
+			<input type="button" onclick="subtract('10')" value="<"></input>
+			<input type="button" onclick="add('10')" value=">"></input><br>
+			<label for="11">valed</label>
+			<input id="11" type="text" value="1.00" size="1" disabled></input>
+			<input type="button" onclick="subtract('11')" value="<"></input>
+			<input type="button" onclick="add('11')" value=">"></input><br><br>
+
+			<input type="button" onclick="calculate()" value="calculate"></input>
+		</form>
+		<h2 id="a">1.000</h2>
+
+		<script>
+
+			var weight = 0;
+
+			function calculate() {
+
+				var gwa = 0;
+
+				for (let i = 1; i <= 11; i++) {
+
+					if ((i >= 1 && i <= 5) || (i >= 7 && i <= 10)) {
+						weight = 1;
+					} else if (i == 6) {
+						weight = 1.3;
+					} else {
+						weight = 0.7;
+					}
+
+					gwa = gwa + document.getElementById(i).value * weight;
+				}
+
+				gwa = Math.round((gwa/11)*1000)/1000;
+				document.getElementById("a").innerHTML = gwa.toFixed(3);
+			}
+
+			function add(x) {
+				if (document.getElementById(x).value >= 1.00 && document.getElementById(x).value < 5.00) {
+					document.getElementById(x).value = (Number(document.getElementById(x).value) + 0.25).toFixed(2);
+				}
+			}
+
+			function subtract(x) {
+				if (document.getElementById(x).value > 1.00 && document.getElementById(x).value <= 5.00) {
+				document.getElementById(x).value = (Number(document.getElementById(x).value) - 0.25).toFixed(2);
+				}
+			}
+
+		</script>
+
+	</body>
+</html>
