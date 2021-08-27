@@ -88,8 +88,8 @@
 					gwa = gwa + document.getElementById(i).value * weight;
 				}
 
-				gwa = Math.round((gwa/11)*1000)/1000;
-				document.getElementById("a").innerHTML = gwa.toFixed(3);
+				gwa = Math.floor(gwa/11 * 1000) / 1000;
+				document.getElementById("a").innerHTML = gwa;
 			}
 
 			function add(x) {
