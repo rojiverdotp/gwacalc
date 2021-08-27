@@ -93,14 +93,24 @@
 			}
 
 			function add(x) {
+
+				let m = 0.25;
+
+				if (document.getElementById(x).value >= 3.00) {m = 1.00}
+
 				if (document.getElementById(x).value >= 1.00 && document.getElementById(x).value < 5.00) {
-					document.getElementById(x).value = (Number(document.getElementById(x).value) + 0.25).toFixed(2);
+					document.getElementById(x).value = (Number(document.getElementById(x).value) + m).toFixed(2);
 				}
 			}
 
 			function subtract(x) {
+
+				let n = 0.25;
+
+				if (document.getElementById(x).value > 3.00) {n = 1.00}
+
 				if (document.getElementById(x).value > 1.00 && document.getElementById(x).value <= 5.00) {
-				document.getElementById(x).value = (Number(document.getElementById(x).value) - 0.25).toFixed(2);
+				document.getElementById(x).value = (Number(document.getElementById(x).value) - n).toFixed(2);
 				}
 			}
 
